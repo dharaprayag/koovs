@@ -25,7 +25,7 @@ public class menCategoryStepDefination extends base
 	//Actions action;
 	
 	
-	//@Before(value="@secondScenario", order=1)
+	@Before(value="@secondScenario", order=1)
 	@Given("^Go to Mens category$")
     public void Go_to_Mens_category() throws Throwable 
 	{
