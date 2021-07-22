@@ -1,5 +1,6 @@
 package stepDefinations;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
@@ -13,6 +14,7 @@ public class LoginStepDefination extends base
 {
 	Login login;
 	
+	@Before(value="@firstScenario", order=1)
 	@Given("^Initialize browser with chrome and navigate to site$")
     public void initialize_browser_with_chrome_and_navigate_to_site() throws Throwable 
 	{
@@ -22,7 +24,7 @@ public class LoginStepDefination extends base
 		driver.manage().window().maximize();
 		login = new Login(driver);
     }
-
+	@Before(value="@firstScenario", order=2)
     @When("^click on login link and Fill up Email and Password and click on log in button$")
     public void click_on_login_link_and_Fill_up_Email_and_Password_and_click_on_log_in_button() throws Throwable
     {
@@ -41,6 +43,7 @@ public class LoginStepDefination extends base
     {
     	Thread.sleep(2000);
     	System.out.println("Username is " + login.getUserName().getText());
+    	driver.quit();
     	//System.out.println(login.getNotification().getText());
     }	
 
