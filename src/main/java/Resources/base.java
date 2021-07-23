@@ -18,6 +18,8 @@ public class base
 	//protected String titleName;
 	protected String Email;
 	protected String Password;
+	protected String MensProductCategory;
+	
 	protected String fileInputStream = "C://Users//dhara//eclipse-workspace2//koovs//src//main//java//Resources//data.properties";
 	
 	
@@ -32,6 +34,8 @@ public class base
 		siteUrl = prop.getProperty("siteURL");
 		Email = prop.getProperty("Email");
 		Password = prop.getProperty("Password");
+		MensProductCategory = prop.getProperty("MensProductCategory");
+		
 		//titleName = prop.getProperty("titleName");
 		 
 		
