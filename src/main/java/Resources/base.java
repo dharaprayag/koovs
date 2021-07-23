@@ -21,6 +21,13 @@ public class base
 	protected String MensProductCategory;
 	
 	protected String fileInputStream = "C://Users//dhara//eclipse-workspace2//koovs//src//main//java//Resources//data.properties";
+	protected String mensProductCategory;
+	protected String brandName;
+	protected String colorName;
+	protected String pricerange;
+	protected String shirtName;
+	protected String shirtName1;
+	protected String size;
 	
 	
 	public WebDriver initilizeDriver() throws IOException
@@ -34,8 +41,18 @@ public class base
 		siteUrl = prop.getProperty("siteURL");
 		Email = prop.getProperty("Email");
 		Password = prop.getProperty("Password");
+<<<<<<< HEAD
 		MensProductCategory = prop.getProperty("MensProductCategory");
 		
+=======
+		mensProductCategory = prop.getProperty("MensProductCategory");
+		brandName =prop.getProperty("BrandName");
+		colorName = prop.getProperty("ColorName");
+		pricerange =prop.getProperty("PriceRange");
+		shirtName = prop.getProperty("ShirtName");
+		shirtName1 = prop.getProperty("ShirtName1");
+		size = prop.getProperty("Size");
+>>>>>>> 5589e10fb7e955d7345243ac4e9fc6c99692ab18
 		//titleName = prop.getProperty("titleName");
 		 
 		
