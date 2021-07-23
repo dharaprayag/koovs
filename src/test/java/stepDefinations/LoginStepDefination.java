@@ -103,7 +103,7 @@ public class LoginStepDefination extends base
     public void Get_total_number_of_shirts() throws Throwable 
     {
     	//int loadMoreCount = men.getLoadMoreButtonSize().size();
-    	System.out.println("Total number of Shirts are " + men.getTotalShirtCount().size());
+    	System.out.println("Total number of Shirts are " + men.getTotalShirtOrJeansCount().size());
     	driver.quit();
     	
     	/*for (int i=0; i<loadMoreCount; i++)
@@ -131,34 +131,29 @@ public class LoginStepDefination extends base
     
     //SECOND SCENARIO
     @After(value="@Login,@firstScenario")
-    @Given("^Select (.+) and mousehover on shirt image$")
-    public void select_and_mousehover_on_shirt_image(String shirtName) throws Throwable
+    @Given("^Select (.+) and (.+) mousehover on image, select size and add into cart$")
+    public void select_and_mousehover_on_image_select_size_and_add_into_cart(String shirtName, String jeans) throws Throwable
     {
     	men = new MenCategory(driver);
     	action = new Actions(driver);
-    	int shirtCount = men.getTotalShirtCount().size();
+    	int shirtCount = men.getTotalShirtOrJeansCount().size();
 		for(int j=0; j<shirtCount; j++)
 		{
 			String shirt = men.getShirtName().get(j).getText();
 			if(shirt.equalsIgnoreCase(shirtName))
 			{
 				Thread.sleep(3000);
-				WebElement mouseHoverOnShirt = men.getMouseHoverOnShirt();
+				WebElement mouseHoverOnShirt = men.getMouseHoverOnShirtOrJeans();
 				action.moveToElement(mouseHoverOnShirt).build().perform();
 				break;
 			}
 		}
-    }
-	
-    @When("^Select size and click on add to bag$")
-    public void Select_size_and_click_on_add_to_bag() throws Throwable
-    {
-    	men.getClickOnAddToCart().click();
+		men.getClickOnAddToCart().click();
     	int sizes = men.getTotalSize().size();
     	for(int k=0; k<sizes; k++)
     	{
     		String Size = men.getSize().get(k).getText();
-    		if(Size.equalsIgnoreCase(size))
+    		if(Size.equalsIgnoreCase(shirtSize))
     		{
     			men.getTotalSize().get(k).click();
     			break;
@@ -166,6 +161,54 @@ public class LoginStepDefination extends base
     	}
     	men.getClickOnAddToBag().click();
     	men.getCloseProductPopup().click();
+    	
+    	////JEANS////
+    	//CLICK ON JEANS LINK
+    	WebElement menlink = men.getMensCategoryLink();
+		action.moveToElement(menlink).build().perform();
+		int count = men.getMenProductsLinksCount().size();
+    	System.out.println(count);		
+    	for(int l=0; l<count; l++)
+   		{
+    		String text =men.getJeansText().get(l).getText();
+  			if(text.equalsIgnoreCase(mensProductCategory1))
+   			{
+  				men.getClickOnJeansLink().get(l).click();
+   				break;
+   			}
+   		}
+    	//select jeans
+    	int jeansCount = men.getTotalShirtOrJeansCount().size();
+		for(int m=0; m<jeansCount; m++)
+		{
+			String shirt = men.getShirtName().get(m).getText();
+			if(shirt.equalsIgnoreCase(jeans))
+			{
+				Thread.sleep(3000);
+				WebElement mouseHoverOnJeans = men.getMouseHoverOnShirtOrJeans();
+				action.moveToElement(mouseHoverOnJeans).build().perform();
+				break;
+			}
+		}
+		men.getClickOnAddToCart().click();
+    	int jeansSizes = men.getTotalSize().size();
+    	for(int k=0; k<jeansSizes; k++)
+    	{
+    		String Size = men.getSize().get(k).getText();
+    		if(Size.equalsIgnoreCase(jeansSize))
+    		{
+    			men.getTotalSize().get(k).click();
+    			break;
+    		}
+    	}
+    	men.getClickOnAddToBag().click();
+    	men.getCloseProductPopup().click();
+    }
+	
+    @When("^Select size and click on add to bag$")
+    public void Select_size_and_click_on_add_to_bag() throws Throwable
+    {
+    	
     }
 
     

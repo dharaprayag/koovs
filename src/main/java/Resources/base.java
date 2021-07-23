@@ -24,8 +24,9 @@ public class base
 	protected String colorName;
 	protected String pricerange;
 	protected String shirtName;
-	protected String shirtName1;
-	protected String size;
+	protected String shirtSize;
+	protected String jeansSize;
+	protected String mensProductCategory1;
 	
 	
 	public WebDriver initilizeDriver() throws IOException
@@ -44,8 +45,9 @@ public class base
 		colorName = prop.getProperty("ColorName");
 		pricerange =prop.getProperty("PriceRange");
 		shirtName = prop.getProperty("ShirtName");
-		shirtName1 = prop.getProperty("ShirtName1");
-		size = prop.getProperty("Size");
+		shirtSize = prop.getProperty("ShirtSize");
+		jeansSize = prop.getProperty("JeansSize");
+		mensProductCategory1 = prop.getProperty("MensProductCategory1");
 		//titleName = prop.getProperty("titleName");
 		 
 		

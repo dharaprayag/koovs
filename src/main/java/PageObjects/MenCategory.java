@@ -16,10 +16,12 @@ public class MenCategory extends base
 	By linksCount = By.xpath("//*[@id='app']/div/div/div/div[1]/div[2]/div/div/div/div/div[2]/div[1]/div/div/ul/li[1]");
 	By menProductsLinksCount = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
 	By shirtsText = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
+	By jeansText = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
 	By clickOnShirtsLink = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li/a");
+	By clickOnJeansLink = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li/a");
 	By shirtsCount = By.xpath("//*[@id='prodBox']/li");
 	By loadMoreButton = By.xpath("//*[@id='loadMoreList']");
-	By totalShirtCount = By.xpath("//div[@class='row-base']/div[2]/ul/li");
+	By totalShirtOrJeansCount = By.xpath("//div[@class='row-base']/div[2]/ul/li");
 	By clickOnViewAllButton = By.xpath("//div[@id='filterRow']/div[4]/div");
 	By numberOfBrands = By.xpath("//div[@id='viewAll']/div[2]/div");
 	By brandName = By.xpath("//div[@id='viewAll']/div[2]/div/label/span[1]");
@@ -60,7 +62,7 @@ public class MenCategory extends base
 	{
 		 return driver.findElement(closeProductPopup);
 	}
-	public WebElement getMouseHoverOnShirt()
+	public WebElement getMouseHoverOnShirtOrJeans()
 	{
 		 return driver.findElement(mouseHoverOnShirt);
 	}
@@ -137,9 +139,9 @@ public class MenCategory extends base
 		 return driver.findElements(numberOfBrands);
 	}
 	
-	public List<WebElement> getTotalShirtCount()
+	public List<WebElement> getTotalShirtOrJeansCount()
 	{
-		 return driver.findElements(totalShirtCount);
+		 return driver.findElements(totalShirtOrJeansCount);
 	}
 	
 	
@@ -160,11 +162,18 @@ public class MenCategory extends base
 	{
 		 return driver.findElements(shirtsText);
 	}
+	public List<WebElement> getJeansText()
+	{
+		 return driver.findElements(jeansText);
+	}
 	public List<WebElement> getClickOnShirtsLink()
 	{
 		 return driver.findElements(clickOnShirtsLink);
 	}
-	
+	public List<WebElement> getClickOnJeansLink()
+	{
+		 return driver.findElements(clickOnJeansLink);
+	}	
 	public WebElement getMensCategoryLink()
 	{
 	return driver.findElement(menLink);

@@ -8,9 +8,9 @@ Then Get total number of shirts
 
 @secondScenario
 Scenario Outline: Select a Shirts and add to bag
-Given Select <shirtName> and mousehover on shirt image
+Given Select <shirtName> and <jeans> mousehover on image, select size and add into cart
 When Select size and click on add to bag
 Then Check number of items added into cart and badge digit are equal
 Examples:
-|shirtName|
-|Zebra Print Cuban Collar Shirt|
+|shirtName|							|jeans|
+|Zebra Print Cuban Collar Shirt|	|Mid Wash Distressed Jeans|
