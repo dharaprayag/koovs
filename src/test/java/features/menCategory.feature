@@ -13,4 +13,4 @@ When Select size and click on add to bag
 Then Check number of items added into cart and badge digit are equal
 Examples:
 |shirtName|
-|Polka Dot Printed Casual Shirt|
+|Zebra Print Cuban Collar Shirt|

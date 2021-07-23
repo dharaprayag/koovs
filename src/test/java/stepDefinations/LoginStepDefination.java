@@ -25,7 +25,7 @@ public class LoginStepDefination extends base
 	@Given("^Initialize browser with chrome and navigate to site$")
     public void initialize_browser_with_chrome_and_navigate_to_site() throws Throwable 
 	{
-		
+		Thread.sleep(3000);
 		driver = initilizeDriver();
 		driver.get(siteUrl);
 		driver.manage().window().maximize();
@@ -41,7 +41,9 @@ public class LoginStepDefination extends base
     		login.getEnterEmail().sendKeys(Email);
         	login.getEnterPassword().sendKeys(Password);
         	login.getAcceptButton().click();
+        	Thread.sleep(3000);
         	login.getLoginButton().click();
+        	
         	
     }
 
@@ -50,13 +52,15 @@ public class LoginStepDefination extends base
     {
     	Thread.sleep(2000);
     	System.out.println("Username is " + login.getUserName().getText());
-    	driver.quit();
     	System.out.println("Login Successful");
+    	driver.quit();
     	//System.out.println(login.getNotification().getText());
     }
     
     ///MENS CATEGORY//////////////////////
-    @After(value="@Login")
+    //@FIRST SCENARIO
+    //@After(value="@Login")
+    @Before(value="@secondScenario",order=3)
 	@Given("^Go to Mens category$")
     public void Go_to_Mens_category() throws Throwable 
 	{
@@ -74,9 +78,8 @@ public class LoginStepDefination extends base
 		WebElement menlink = men.getMensCategoryLink();
 		action.moveToElement(menlink).build().perform();
     }
-	
     
-    
+    @Before(value="@secondScenario",order=4)
     @When("^Select a shirt Section$")
     public void Select_a_shirt_Section() throws Throwable
     {
@@ -101,7 +104,7 @@ public class LoginStepDefination extends base
     {
     	//int loadMoreCount = men.getLoadMoreButtonSize().size();
     	System.out.println("Total number of Shirts are " + men.getTotalShirtCount().size());
-    	//driver.quit();
+    	driver.quit();
     	
     	/*for (int i=0; i<loadMoreCount; i++)
 		{
@@ -127,7 +130,7 @@ public class LoginStepDefination extends base
     
     
     //SECOND SCENARIO
-    @After(value="@firstScenario", order=1)
+    @After(value="@Login,@firstScenario")
     @Given("^Select (.+) and mousehover on shirt image$")
     public void select_and_mousehover_on_shirt_image(String shirtName) throws Throwable
     {
