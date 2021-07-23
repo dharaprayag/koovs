@@ -18,6 +18,8 @@ public class base
 	//protected String titleName;
 	protected String Email;
 	protected String Password;
+	protected String MensProductCategory;
+	
 	protected String fileInputStream = "C://Users//dhara//eclipse-workspace2//koovs//src//main//java//Resources//data.properties";
 	protected String mensProductCategory;
 	protected String brandName;
@@ -40,14 +42,24 @@ public class base
 		siteUrl = prop.getProperty("siteURL");
 		Email = prop.getProperty("Email");
 		Password = prop.getProperty("Password");
+<<<<<<< HEAD
+		MensProductCategory = prop.getProperty("MensProductCategory");
+		
+=======
 		mensProductCategory = prop.getProperty("MensProductCategory");
 		brandName =prop.getProperty("BrandName");
 		colorName = prop.getProperty("ColorName");
 		pricerange =prop.getProperty("PriceRange");
 		shirtName = prop.getProperty("ShirtName");
+<<<<<<< HEAD
 		shirtSize = prop.getProperty("ShirtSize");
 		jeansSize = prop.getProperty("JeansSize");
 		mensProductCategory1 = prop.getProperty("MensProductCategory1");
+=======
+		shirtName1 = prop.getProperty("ShirtName1");
+		size = prop.getProperty("Size");
+>>>>>>> 5589e10fb7e955d7345243ac4e9fc6c99692ab18
+>>>>>>> 5d3fe40dc568fad4277db13963518c055813531f
 		//titleName = prop.getProperty("titleName");
 		 
 		

@@ -14,6 +14,17 @@ public class MenCategory extends base
 {
 	By menLink = By.xpath("//a[@href='/men']");
 	By linksCount = By.xpath("//*[@id='app']/div/div/div/div[1]/div[2]/div/div/div/div/div[2]/div[1]/div/div/ul/li[1]");
+<<<<<<< HEAD
+	By textShirtsForMen = By.xpath("//div[@class='pl-subheader-info']/h1");
+	By menProductsLinksCount = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
+	By shirtsText = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
+	By clickOnShirtsLink = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li/a");
+	By loadMore = By.xpath("//div[@text()='Load More']");
+	By shirtsCount = By.xpath("//*[@id='prodBox']/li");
+	By basicLongSleeveShirt = By.xpath("//div[@class='infoView']/span[2]");
+	By clickOnBasicLongSleeveShirt = By.xpath("//div[@class='infoView']");
+		
+=======
 	By menProductsLinksCount = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
 	By shirtsText = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
 	By jeansText = By.xpath("//*[@class='header_menu_Title']/li[1]/div/ul[1]/li[3]/div/ul/li");
@@ -42,6 +53,7 @@ public class MenCategory extends base
 	By closeProductPopup =By.xpath("//div[@class='modal-content-wrap']/span");
 	
 	
+>>>>>>> 5589e10fb7e955d7345243ac4e9fc6c99692ab18
 	public MenCategory(WebDriver driver) 
 	{
 		// TODO Auto-generated constructor stub
@@ -145,6 +157,11 @@ public class MenCategory extends base
 	}
 	
 	
+	public WebElement getLoadMore()
+	{
+		 return driver.findElement(loadMore);
+	}
+	
 	public List<WebElement> getLinksCount()
 	{
 		 return driver.findElements(linksCount);
@@ -154,6 +171,13 @@ public class MenCategory extends base
 	{
 		 return driver.findElements(shirtsCount);
 	}
+<<<<<<< HEAD
+	public String getTextShirtForMen()
+	{
+		 return driver.findElement(textShirtsForMen).getText();
+	}
+=======
+>>>>>>> 5589e10fb7e955d7345243ac4e9fc6c99692ab18
 	public List<WebElement> getMenProductsLinksCount()
 	{
 		 return driver.findElements(menProductsLinksCount);
@@ -170,13 +194,29 @@ public class MenCategory extends base
 	{
 		 return driver.findElements(clickOnShirtsLink);
 	}
+<<<<<<< HEAD
 	public List<WebElement> getClickOnJeansLink()
 	{
 		 return driver.findElements(clickOnJeansLink);
 	}	
+=======
+	
+<<<<<<< HEAD
+	public List<WebElement> getBasicLongSleeveShirt()
+	{
+		 return driver.findElements(basicLongSleeveShirt);
+	}
+	public List<WebElement> getClickOnBasicLongSleeveShirt()
+	{
+		 return driver.findElements(clickOnBasicLongSleeveShirt);
+	}
+	
+=======
+>>>>>>> 5d3fe40dc568fad4277db13963518c055813531f
 	public WebElement getMensCategoryLink()
 	{
 	return driver.findElement(menLink);
 	}
+>>>>>>> 5589e10fb7e955d7345243ac4e9fc6c99692ab18
 	
 }
