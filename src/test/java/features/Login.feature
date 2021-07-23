@@ -1,5 +1,6 @@
 Feature: Login into Application
 
+@Login
 Scenario: Positive scenario
 Given Initialize browser with chrome and navigate to site
 When click on login link and Fill up Email and Password and click on log in button
